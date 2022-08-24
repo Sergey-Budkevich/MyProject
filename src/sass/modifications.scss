@@ -1,0 +1,31 @@
+
+//colors
+$colorYelow: #ffd633;
+$colorBlack: #2B150D;
+$colorWhite: #F9F8F3;
+$colorGray: #E8E8E8;
+$colorOrange:#FF7A1B;
+$colorGray2:#BBBBBB;
+$colorRed:#FF3838;
+$colorDefaultWhite:#FFFFFF;
+$colorDefaultBlack:#000000;
+
+//fonts
+$ubuntu:'Ubuntu', sans-serif;
+$fst:normal;
+$fw:400;
+$fsz:14px;
+$lh:20px;
+
+
+//mixin
+
+@mixin fontz($ubuntu,$fst,$fw,$fsz,$lh,$color2_black) {
+    font-family:$ubuntu;
+    font-style: $fst;
+    font-weight: $fw;
+    font-size: $fsz;
+    line-height: $lh;
+    color: $color2_black;
+}
+

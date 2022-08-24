@@ -1,0 +1,221 @@
+@import '../modifications.scss';
+
+
+
+.header{
+    position: sticky;
+    height: 200px;
+    .header__top-row{
+        background-color: $colorBlack;
+        height: 45px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .top-row__content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .header__location{
+                display: flex;
+                align-items: center;
+                column-gap: 50px;
+                .header__location-left{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 9px;
+                    .header__location-left-text{
+                        @include fontz($ubuntu,$fst,$fw,13px,16px,$colorDefaultWhite);
+                        & > span{
+                            font-weight:600;
+                        }
+                    }
+                }
+                .header__location-right{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 9px;
+                    .header__location-right-text{
+                        @include fontz($ubuntu,$fst,$fw,13px,16px,$colorDefaultWhite);
+                        & > span{
+                            font-weight:600;
+                        }
+                    }
+                }
+            }
+            .top-row__nav{
+                display: flex;
+                align-items: center;
+                column-gap: 75px;
+                .top-row__nav-link{
+                    @include fontz($ubuntu,$fst,$fw,13px,16px,$colorDefaultWhite);
+                    &:hover{
+                        padding-bottom: 3px;
+                        border-bottom: 2px solid $colorOrange;
+                        transition-duration: 0.1s;
+                    }
+                }
+            }
+        }
+    }
+    .header__middle-row{
+        height: 106px;
+        background-color: $colorWhite;
+        .middle-row__content{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .middle-row__logo{
+                margin-right: 75px;
+                &:hover{
+                    transform: scale(1.2);
+                    transition-duration: 0.3s;
+                }
+            }
+            .middle-row__search-panel{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 758px;
+                width: 100%;
+                row-gap: 10px;
+                margin-right: 50px;
+                .search-panel__row{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    column-gap: 40px;
+                    width: 100%;
+                    .search-panel__row-text{
+                        @include fontz($ubuntu,$fst,$fw,13px,16px,$colorBlack);
+                        >svg{
+                            margin-right: 8px;
+                        }
+                    }
+                }
+                .search-panel__search{
+                    width: 100%;
+                    height: 45px;
+                    display: flex;
+                    align-items: center;
+                    .search__input{
+                        height: 100%;
+                        max-width: 602px;
+                        width: 100%;
+                        border-radius: 6px;
+                        border: none;
+                        outline: none;
+                        padding-left: 15px;
+                        &::placeholder{
+                            @include fontz($ubuntu,$fst,300,14px,17px,#818181);
+                        }
+                    }
+                    .search__btn{
+                        width: 156px;
+                        background-color: $colorYelow;
+                        height: 100%;
+                        border: none;
+                        border-radius: 6px;
+                        &:active{
+                            background-color: rgba(255, 214, 51,0.8);
+                        }
+                    }
+                }
+            }
+            .middle-row__contacts{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: space-between;
+                margin-right: 30px;
+                .contacts__schedule{
+                    &>svg {
+                        margin-right: 8px;
+                    }
+                    @include fontz($ubuntu,$fst,300,13px,16px,$colorDefaultBlack);
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 8px;
+                }
+                .contacts__number{
+                    @include fontz($ubuntu,$fst,300,18px,21px,$colorDefaultBlack);  
+                    &>span{
+                        @include fontz($ubuntu,$fst,600,18px,21px,$colorBlack);
+                    }
+                    &:first-child{
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            .middle-row__callback{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 10px;
+                .callback__mail{
+                    display: flex;
+                    align-items: center;
+                    @include fontz($ubuntu,$fst,400,13px,16px,$colorDefaultBlack);
+                    &>svg{
+                        margin-right: 8px;
+                    }
+                }
+                .callback__btn{
+                    width: 223px;
+                    height: 44px;
+                    background-color: $colorOrange;
+                    border: none;
+                    border-radius: 6px;
+                    @include fontz($ubuntu,$fst,400,16px,19px,$colorDefaultWhite);
+                }
+            }
+        }
+    }
+    .header__bottom-row{
+        height: 50px;
+        background-color: $colorDefaultWhite;
+        border: 1px solid #E8E8E8;
+        .bottom-row__content{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            .bottom-row__catalog-link{
+                display: flex;
+                align-items: center;
+                column-gap: 25px;
+                width: 268px;
+                background-color: $colorYelow;
+                height: 100%;
+                border: none;
+                >svg{
+                    margin-left: 17px;
+                }
+                .bottom-row__catalog-link-text{
+                    @include fontz($ubuntu,$fst,400,16px,19px,$colorDefaultBlack);
+                }
+            }
+            .bottom-row__navigation{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: calc(100% - 268px);
+                width: 100%;
+                padding-left: 85px;
+                .bottom-row__navigation-link{
+                    @include fontz($ubuntu,$fst,400,14px,17px,$colorDefaultBlack);
+                    &:hover{
+                        transition-duration: 0.1s;
+                        transform: scale(1.1);
+                        border-bottom: 2px solid $colorOrange;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
