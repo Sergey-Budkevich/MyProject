@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 @import '/src/sass/modifications.scss';
 @import '/src/sass/main/header.scss';
+@import '/src/sass/main/about.scss';
+@import '/src/sass/main/categories.scss';
+@import '/src/sass/main/reviews.scss';
+@import '/src/sass/main/about-us.scss';
+@import '/src/sass/main/articles.scss';
+@import '/src/sass/main/subscription.scss';
+
+
 
 body{
     color: #000;
@@ -23,4 +31,8 @@ a{
     width: 100%;
     padding: 0 16px;
     margin: 0 auto;
+}
+
+.title{
+    @include fontz($ubuntu,$fst,$fw,32px,38px,$colorDefaultBlack);
 }

@@ -1,0 +1,46 @@
+@import '../modifications.scss';
+
+
+
+.subscription{
+    padding: 45px 0;
+    background-color: $colorWhite;
+    .subscription__container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .subscription__text{
+            @include fontz($ubuntu,$fst,400,24px,29px,$colorDefaultBlack);
+        }
+        .subscription__form{
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 780px;
+            width: 100%;
+            column-gap: 20px;
+            .subscription__input, .subscription__form-btn{
+                max-width: 33%;
+                width: 100%;
+                height: 100%;
+                border: none;
+                border-radius: 6px;
+            }
+            .subscription__input{
+                padding-left: 15px;
+                outline: none;
+            }
+            .subscription__form-btn{
+                background-color: $colorOrange;
+                @include fontz($ubuntu,$fst,400,16px,19px,$colorDefaultWhite);
+            }
+        }
+    }
+}
+
+
+
+
+
+

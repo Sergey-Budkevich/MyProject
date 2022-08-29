@@ -1,0 +1,55 @@
+@import '../modifications.scss';
+
+
+.articles{
+    padding: 60px 0;
+    .articles__cards{
+        margin-top: 35px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 55px;
+        row-gap: 35px;
+        .articles__card{
+            display: flex;
+            flex-direction: column;
+            &:nth-of-type(odd){
+                &>.card__image-box{
+                    background-color: #DBDBDB;
+                }
+            }
+            &:nth-of-type(even){
+                &>.card__image-box{
+                    background-color: $colorWhite;
+                }
+            }
+            .card__image-box{
+                border-radius: 8px;
+                width: 100%;
+                height: 230px;
+            }
+            .card__theme{
+                margin-top: 12px;
+                .card__title{
+                    @include fontz($ubuntu,$fst,600,20px,172%,$colorOrange);
+                }
+                .card__date{
+                    @include fontz($ubuntu,$fst,400,12px,172%,$colorGray2);
+                }
+            }
+            .card__text{
+                margin-top: 8px;
+                @include fontz($ubuntu,$fst,300,14px,172%,$colorDefaultBlack);
+            }
+            .card__link{
+                margin-top: 10px;
+                @include fontz($ubuntu,$fst,400,14px,17px,$colorOrange);
+                &:hover{
+                    scale: 1.08;
+                }
+            }
+        }
+    }
+
+}
+
+

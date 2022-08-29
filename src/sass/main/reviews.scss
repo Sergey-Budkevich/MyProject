@@ -1,0 +1,96 @@
+@import '../modifications.scss';
+
+
+.reviews{
+    // background-color: $colorWhite;
+    .reviews__title{
+        padding: 50px 0 35px;
+        background-color: $colorDefaultWhite;
+    }
+    .reviews__container{
+        width: 100%;
+        padding: 50px 0;
+        background-color: $colorWhite;
+        .reviews__slider{
+            position: relative;
+            .slider__wrapper{
+                .slider__items{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: stretch;
+                    column-gap: 16px;
+                    margin: 0 auto;
+                    max-width: calc((470px * 3) + (16px * 2) - (60px * 2));
+                    width: 100%;
+                    .slider__item{
+                        max-width: 470px;
+                        width: 100%;
+                        border: 1px solid #E8E8E8;
+                        border-radius: 5px;
+                        padding: 25px;
+                        display: flex;
+                        flex-direction: column;
+                        .item__top-row{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-bottom: 25px;
+                            .top-row__left-column , .top-row__right-column{
+                                display: flex;
+                                flex-direction: column;
+                                row-gap: 8px;
+                            }
+                        }
+                        .item__line{
+                            width: 100%;
+                            margin: 0 auto;
+                            height: 2px;
+                            background-color: $colorGray;
+                        }
+                        .item__text{
+                            margin-top: 20px;
+                            @include fontz($ubuntu,$fst,300,14px,144%,$colorDefaultBlack);
+                        }
+                        .item__link{
+                            margin-top: 8px;
+                            text-decoration: underline;
+                            @include fontz($ubuntu,$fst,400,14px,144%,$colorOrange);
+                        }
+                    }
+                }
+            }
+            .btn{
+                width: 45px;
+                height: 45px;
+                border-radius: 30px;
+                border: none;
+                background-color: $colorDefaultWhite;
+            }
+            .slider__btn--left{
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+            .slider__btn--right{
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+            }
+        }
+        .reviews__btn{
+            background-color: $colorOrange;
+            width: 222px;
+            height: 40px;
+            border: none;
+            color: $colorDefaultWhite;
+            margin-top: 25px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+
