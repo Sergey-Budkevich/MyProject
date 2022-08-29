@@ -1,0 +1,141 @@
+@import '../modifications.scss';
+
+
+
+.footer{
+    padding: 30px 0 35px;
+    background-color: #1F1F1F;
+    .footer__top-row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .top-row__column-left{
+            max-width: 540px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 30px;
+            .footer__address{
+                @include fontz($ubuntu,$fst,400,18px,22px,$colorDefaultWhite);
+            }
+        }
+        .top-row__column-right{
+            max-width: 570px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 30px;
+            .footer__schedule{
+                @include fontz($ubuntu,$fst,400,18px,22px,$colorDefaultWhite);
+                & span{
+                    color: $colorOrange;
+                }
+            }
+            .footer__btn{
+                width: 275px;
+                height: 50px;
+                border-radius: 6px;
+                background-color: $colorOrange;
+                @include fontz($ubuntu,$fst,400,18px,22px,$colorDefaultWhite);
+            }
+        }
+    }
+    .footer__line{
+        margin-top: 30px;
+        width: 105%;
+        height: 1px;
+        background-color: $colorGray2;
+        transform: translateX(-2%);
+    }
+    .footer__middle-row{
+        padding: 30px 0 0 ;
+        display: flex;
+        justify-content: space-between;
+        .middle-row__column-left{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 30px;
+            max-width: 550px;
+            width: 100%;
+            .column__item{
+                .item__title{
+                    @include fontz($ubuntu,$fst,700,16px,19px,$colorDefaultWhite);
+                }
+                .item__list{
+                    list-style: none;
+                    padding: 0;
+                    margin-top: 15px;
+                    .item__list-link{
+                        @include fontz($ubuntu,$fst,300,14px,17px,$colorDefaultWhite);
+                        opacity: 0.8;
+                        &:hover{
+                            color: $colorOrange;
+                        }
+                    }
+                }
+            }
+        }
+        .middle-row__column-right{
+            display: flex;
+            justify-content: space-between;
+            max-width: 500px;
+            width: 100%;
+            column-gap: 30px;
+            .column-right__items{
+                display: flex;
+                flex-direction: column;
+                row-gap: 15px;
+                .item{
+                    @include fontz($ubuntu,$fst,400,14px,17px,$colorDefaultWhite);
+                }
+                .items__phone{
+                    @include fontz($ubuntu,$fst,300,24px,29px,$colorDefaultWhite);
+                    &>span{
+                        color: $colorOrange;
+                    }
+                }
+                .items__info{
+                    line-height: 21px;
+                }
+                .social-box{
+                    margin-top: 15px;
+                    display: flex;
+                    align-items: center;
+                    column-gap: 15px;
+                    .items__social-link:hover{
+                        transform: scale(1.15);
+                    }
+                }
+            }
+        }
+    }
+    .footer__bottom-row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 100px;
+        margin-top: 30px;
+        .bottom-row__text{
+            max-width: 300px;
+            width: 100%;
+            @include fontz($ubuntu,$fst,400,14px,19px,$colorDefaultWhite);
+            opacity: 0.6;
+        }
+        .footer__payments{
+            max-width: 720px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 25px;
+            .payments__text{
+                @include fontz($ubuntu,$fst,400,14px,19px,$colorDefaultWhite);
+                opacity: 0.6;
+                margin-right: 30px;
+            }
+        }
+    }
+}
