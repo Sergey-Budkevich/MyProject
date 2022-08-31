@@ -1,0 +1,124 @@
+@import '../modifications.scss';
+
+
+
+.bestseller{
+    padding: 35px 0 0;
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .bestseller__header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            .bestseller__header-link{
+                @include fontz($ubuntu,$fst,400,16px,19px,$colorGray2);
+                &:hover{
+                    color: $colorOrange;
+                    transform: scale(1.1);
+                }
+            }
+        }
+        .bestseller__button-panel{
+            margin-top: 20px;
+            display: flex;
+            align-items: stretch;
+            width: 100%;
+            background-color: $colorWhite;
+            border-bottom: 2px solid $colorGray;
+            .button-panel__btn{
+                height: 60px;
+                border: none;
+                width: 160px;
+                background-color: transparent;
+                @include fontz($ubuntu,$fst,300,18px,22px,#898989);
+            }
+            .active{
+                background-color: $colorDefaultWhite;
+                color: $colorDefaultBlack;
+            }
+        }
+        .bestseller__products{
+            margin-top: 20px;
+            display: flex;
+            align-items: stretch;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            width: 100%;
+            .bestseller__product{
+                padding: 15px;
+                border: 1px solid $colorGray;
+                width: 20%;
+                display: flex;
+                flex-direction: column;
+                row-gap: 8px;
+                .product__image-box{
+                    width: 100%;
+                    height: 250px;
+                    background-image: url('/src/assets/images/product-image.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: auto;
+                }
+                .product__vendor-code{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    column-gap: 40px;
+                    @include fontz($ubuntu,$fst,300,12px,14px,$colorDefaultBlack);
+                    opacity: 0.68;
+                    margin-top: 12px;
+                }
+                .product__title{
+                    @include fontz($ubuntu,$fst,400,18px,22px,$colorDefaultBlack);
+                }
+                .product-size, .product-square, .product-capacity, .product-warranty{
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    width: 100%;
+                    &>svg{
+                        margin-right: 6px;
+                    }
+                    .text{
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        @include fontz($ubuntu,$fst,300,13px,16px,$colorDefaultBlack);
+                        &>span{
+                            align-self: flex-end;
+                        }
+                    }
+                }
+                .product-footer{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    column-gap: 30px;
+                    margin-top: 8px;
+                    .product-price__text{
+                        @include fontz($ubuntu,$fst,700,22px,26px,$colorDefaultBlack);
+                    }
+                    .product-footer__btn{
+                        height: 50px;
+                        width: 130px;
+                        border: none;
+                        border-radius: 6px;
+                        background-color: $colorYelow;
+                        @include fontz($ubuntu,$fst,400,16px,19px,$colorBlack);
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
