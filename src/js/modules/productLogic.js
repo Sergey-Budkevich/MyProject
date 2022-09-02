@@ -1,15 +1,13 @@
-import { productList } from "./products";
 const productContainer = document.querySelector('.bestseller__products');
-export const renderProductList = (list) => {
-    list.forEach(({id,vendorCode,title,size,square,capacity,warranty,price,image}) => {
+const createProductblock = ({vendorCode,title,size,square,capacity,warranty,price,image,type}) => {
     const productBlock = document.createElement('div');
     productBlock.classList.add('bestseller__product');
-    productBlock.setAttribute('product-id',id);
+    productBlock.setAttribute('product-type',type);
     
     const productImageBlock = document.createElement('div');
     productImageBlock.classList.add('product__image-box');
     const productImage = document.createElement('img');
-    productImage.setAttribute('src', image);
+    productImage.src = image;
     productImage.setAttribute('alt', 'product');
     productImageBlock.append(productImage);
     
@@ -79,5 +77,13 @@ export const renderProductList = (list) => {
     
     productBlock.append(productImageBlock, productVendorCode, productTitle, productSizeBlock, productSquareBlock, productCapacityBlock, productWarrantyBlock, productFooterBlock);
     productContainer.append(productBlock);
-});
 }
+
+
+export const renderProductList = (list) => {
+    productContainer.innerHTML = "";
+    list.forEach((item) => {
+        createProductblock(item);
+    });
+}
+

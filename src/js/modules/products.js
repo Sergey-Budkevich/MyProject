@@ -23,7 +23,7 @@ export let productList = [
     warranty: 9,
     price: 2223900,
     sale:0,
-    image:'./assets/images/product-image.png',
+    image:'../../assets/images/product-image.png',
     type:'baths'
 },
 {
@@ -101,7 +101,7 @@ export let productList = [
     warranty: 7,
     price: 2023900,
     sale:0,
-    image:'./assets/images/product-image.pngg',
+    image:'./assets/images/product-image.png',
     type:'houses'
 },
 {

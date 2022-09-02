@@ -1,46 +1,24 @@
 import { productList } from "./modules/products";
-import { renderProductList } from "./modules/productLogic";
+import { renderProductList} from "./modules/productLogic";
 
 const productContainer = document.querySelector('.bestseller__products');
-const btnBaths = document.querySelector('.btn--baths')
-const btnSites = document.querySelector('.btn--sites')
-const btnHouses = document.querySelector('.btn--houses')
-const btnPergolas = document.querySelector('.btn--pergolas')
-const btnBrands = document.querySelector('.btn--brands')
-const btnGazebos = document.querySelector('.btn--gazebos')
-let productListCopy = [...productList];
+const btnPanel = document.querySelector('.bestseller__button-panel');
+const btnAdBtnPanel = document.querySelectorAll('.button-panel__btn');
 
-btnHouses.addEventListener('click',() => {
-    productListCopy = productListCopy.filter((item) => {
-        return item.type == 'houses';
-    })
-    renderProductList(productListCopy)
-} );
 
-btnBaths.addEventListener('click',()=>{
+btnPanel.addEventListener('click',(event => {
+    let target = event.target
+    let productListCopy = [...productList];
     productListCopy = productListCopy.filter((item) => {
-        return item.type == 'baths';
-    })
-    renderProductList(productListCopy)
-})
+        return item.type == target.getAttribute('btn-id');
+    });
+    for(let i = 0; i < btnAdBtnPanel.length; i++ ){
+        btnAdBtnPanel[i].classList.remove('active');
+        productContainer.innerHTML = "";
+    }
+    target.classList.add('active');
+    renderProductList(productListCopy);
+}))
 
-btnSites.addEventListener('click',()=>{
-    productListCopy = productListCopy.filter((item) => {
-        return item.type == 'sites';
-    })
-    renderProductList(productListCopy)
-})
 
-btnPergolas.addEventListener('click',()=>{
-    productListCopy = productListCopy.filter((item) => {
-        return item.type == 'pergolas';
-    })
-    renderProductList(productListCopy)
-})
 
-btnGazebos.addEventListener('click',()=>{
-    productListCopy = productListCopy.filter((item) => {
-        return item.type == 'gazebos';
-    })
-    renderProductList(productListCopy)
-})
