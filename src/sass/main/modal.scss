@@ -1,0 +1,22 @@
+@import '/src/sass/modifications.scss';
+
+
+.modal{
+    position: fixed;
+    top: 60px;
+    right: 40px;
+    padding: 20px 30px;
+    background-color: rgb(129, 255, 255);
+    border-radius: 12px;
+    transition: all ease 3s;
+    .modal__text{
+        @include fontz($ubuntu,$fst,$fw,18px,22px,$colorDefaultBlack);
+    }
+    .modal__user-name{
+        color: rgb(45, 193, 52);
+        font-weight: 500;
+        font-size: 22px;
+    }
+}
+
+

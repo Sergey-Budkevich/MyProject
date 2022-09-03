@@ -30,6 +30,11 @@
             .subscription__input{
                 padding-left: 15px;
                 outline: none;
+                @include fontz($ubuntu,$fst,400,18px,22px,$colorDefaultBlack);
+                &::placeholder{
+                    @include fontz($ubuntu,$fst,400,16px,18px,$colorDefaultBlack);
+                    opacity: 0.7;
+                }
             }
             .subscription__form-btn{
                 background-color: $colorOrange;
