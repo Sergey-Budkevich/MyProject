@@ -1,51 +1,86 @@
-// @import '../modifications.scss';
+@import '/src/sass/modifications.scss';
 
-// .about{
-//     padding: 20px 0;
-//     .about__container{
-        
-//         .about__sliders{
-//             height: 376px;
-//             width: 100%;
-//             .about__slider{
-//                 width: 100%;
-//                 height: 100%;
-//                 position: relative;
-//                 &>img{
-//                     position: absolute;
-//                     top: 0;
-//                     left: 0;
-//                     width: 100%;
-//                 }
-//                 &>button{
-//                     position: relative;
-//                     z-index: 10;
-//                     border: none;
-//                     background-color: transparent;
-                    
-//                     {
-//                         position: absolute;
-//                         top: 50%;
-//                         left: 0;
-//                     }
-//                     &:last-child{
-//                         position: absolute;
-//                         top: 50%;
-//                         right: 0;
-//                     }
-//                 }
-                
-//             }
-//             .about__slider-first{
-//                 padding: 50px 0 150px 100px;
-//                 .about__slider-first-description{
-//                     position: relative;
-//                     z-index: 10;
-//                 }
-//             }
-//         }
-//     }
-// }
+
+.about{
+    padding: 20px 0 0;
+    .container{
+        width: 100%;
+        .about__slider{
+            width: 100%;;
+            overflow:hidden;
+            position: relative;
+            .slider-line{
+                position: relative;
+                left: 0;
+                transition:all ease 1s;
+                display: flex;
+                .slider-item{
+                    position: relative;
+                    width: 100%;
+                    margin: 0 22px;
+                    .main-title{
+                        position: absolute;
+                        top: 50px;
+                        left: 100px;
+                        max-width: 625px;
+                        @include fontz($ubuntu,$fst,700,70px,124%,$colorDefaultWhite);
+                    }
+                    .slider-title{
+                        position: absolute;
+                        top: 50px;
+                        left: 100px;
+                        max-width: 625px;
+                        color: $colorDefaultWhite;
+                        &>span{
+                            color: $colorOrange;
+                        }
+                    }
+                }
+            }
+            .slider-prev, .slider-next{
+                border: none;
+                background-color: transparent;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .slider-prev{
+                left: 0;
+            }
+            .slider-next{
+                right: 0;
+            }
+        }
+    }
+    .about__items{
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        margin-top: 40px;
+        .about__item{
+            max-width: 310px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            column-gap: 17px;
+            .about__item-title{
+                max-width: 213px;
+                width: 100%;
+                @include fontz($ubuntu,$fst,$fw,14px,126%,#2D170C);
+                letter-spacing: -0.015em;
+            }
+            .item__icon-box{
+                height: 80px;
+                width: 80px;
+                border-radius: 50%;
+                background-color: $colorWhite;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
 
 
 
