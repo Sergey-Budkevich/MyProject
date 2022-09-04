@@ -600,9 +600,9 @@
                 <div class="subscription__container">
                     <p class="subscription__text">Хотите быть в курсе выгодных предложений, акций и новинок?</p>
                     <form action="" class="subscription__form">
-                        <input type="text" required class="subscription__input-username subscription__input" placeholder="Имя">
-                        <input type="email" required class="subscription__input-email subscription__input" placeholder="Email">
-                        <button type="button" class="subscription__form-btn btn">Подписаться</button>
+                        <input type="text" class="subscription__input-username subscription__input" placeholder="Имя" required >
+                        <input type="email" class="subscription__input-email subscription__input" placeholder="Email"  required >
+                        <button type="submit" class="subscription__form-btn btn">Подписаться</button>
                     </form>
                 </div>
             </div>
@@ -622,7 +622,7 @@
                     </div>
                     <div class="top-row__column-right">
                         <p class="footer__schedule">График работы:<br>Ежедневно с <span>9:00</span> до <span>21:00</span></p>
-                        <button class="footer__btn btn">Заказать звонок</button>
+                        <button class="footer__btn call-back-btn btn">Заказать звонок</button>
                     </div>
                 </div>
                 <div class="footer__line"></div>
@@ -811,6 +811,29 @@
             </div>
         </div>
     </footer>
+    <!-- <div class="call-back-modal">
+        <form class="call-back-modal__form" action="">
+            <button class="btn-close btn" type="button">X</button>
+            <h2 class="call-back-modal__title title">Заполните поля для обратной связи</h2>
+            <div class="input-block input-block--name">
+                <input type="text" name="name" placeholder="Имя" required>
+                <label for="name">Введите ваше имя</label>
+            </div>
+            <div class="input-block input-block--tel">
+                <input type="tel" name="tel" placeholder="Номер телефона" required>
+                <label for="tel">Введите ваш номер телефона</label>
+            </div>
+            <div class="input-block input-block--date">
+                <input type="date" name="date">
+                <label for="date">Выберите дату для обратной связи</label>
+            </div>
+            <div class="input-block input-block--time">
+                <input type="time" name="time">
+                <label for="time">Укажите удобное время для звонка</label>
+            </div>
+            <button type="submit" class="call-back-form__btn btn">отправить</button>
+        </form>
+    </div> -->
     <script src="./js/index.js" type="module"></script>
 </body>
 </html>

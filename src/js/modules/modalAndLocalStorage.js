@@ -3,9 +3,6 @@ const formBtn = document.querySelector('.subscription__form-btn');
 const inputUserName = document.querySelector('.subscription__input-username');
 
 const inputUserEmail = document.querySelector('.subscription__input-email');
-// {userName}
-
-
 
 const clickFormBtn = () => {
     formBtn.addEventListener('click',() => {
@@ -48,5 +45,4 @@ const createModal = (name) => {
 export {
     clickFormBtn,
     createModal,
-    
 }
