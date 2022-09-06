@@ -132,7 +132,7 @@
                         </svg>
                         youremail@mailbox.ru
                     </a>
-                    <button type="button" class="callback__btn btn">Заказать звонок</button>
+                    <button type="button" class="call-back__btn btn">Заказать звонок</button>
                 </div>
             </div>
         </div>
@@ -811,29 +811,31 @@
             </div>
         </div>
     </footer>
-    <!-- <div class="call-back-modal">
-        <form class="call-back-modal__form" action="">
-            <button class="btn-close btn" type="button">X</button>
+    <div class="call-back-modal">
+        <form action="" class="call-back-modal__form">
+            <button type="button" class="btn-close btn">X</button>
             <h2 class="call-back-modal__title title">Заполните поля для обратной связи</h2>
             <div class="input-block input-block--name">
-                <input type="text" name="name" placeholder="Имя" required>
+                <input class="input-name" type="text" required placeholder="Имя" name="name">
+                <span class="input-error input-name-error">Заполните поле</span>
                 <label for="name">Введите ваше имя</label>
             </div>
             <div class="input-block input-block--tel">
-                <input type="tel" name="tel" placeholder="Номер телефона" required>
+                <input class="input-tel" type="tel" required placeholder="Номер телефона" name="tel">
+                <span class="input-error input-tel-error">Заполните поле</span>
                 <label for="tel">Введите ваш номер телефона</label>
             </div>
             <div class="input-block input-block--date">
-                <input type="date" name="date">
+                <input class="input-date" type="date"  name="date">
                 <label for="date">Выберите дату для обратной связи</label>
             </div>
             <div class="input-block input-block--time">
-                <input type="time" name="time">
+                <input class="input-time" type="time" name="time">
                 <label for="time">Укажите удобное время для звонка</label>
             </div>
-            <button type="submit" class="call-back-form__btn btn">отправить</button>
+            <button type="submit" class="call-back-form__btn btn">Отправить</button>
         </form>
-    </div> -->
+    </div>
     <script src="./js/index.js" type="module"></script>
 </body>
 </html>

@@ -1,101 +1,75 @@
 const callBackBtn = document.querySelector('.call-back-btn');
-const callBackBtn2 = document.querySelector('.callback__btn');
+const callBackBtn2 = document.querySelector('.call-back__btn');
+const callBackBlock = document.querySelector('.call-back-modal');
+const btnSubmit = document.querySelector('.call-back-form__btn');
+const closeBtn = document.querySelector('.btn-close');
 
-function callBackModal(){
+const inputName = document.querySelector('.input-name');
+const inputTel = document.querySelector('.input-tel');
+const inputDate = document.querySelector('.input-date');
+const inputTime = document.querySelector('.input-time');
+
+const nameError = document.querySelector('.input-name-error');
+const telError = document.querySelector('.input-tel-error');
+
+
+export function callBackLogic(){
     callBackBtn.addEventListener('click',() => {
-    createCallBackModal()
-    // callBackSubmit(inputName,inputTel,inputDate,inputTime,btnSubmit)
+        callBackBlock.style.visibility = 'visible'
+        sendData()
+        closeModal()
 });
     callBackBtn2.addEventListener('click',() => {
-        createCallBackModal()
-        // callBackSubmit(inputName,inputTel,inputDate,inputTime,btnSubmit)
+        callBackBlock.style.visibility = 'visible'
+        sendData()
+        closeModal()
+        
 });
 }
 
-function callBackSubmit(inputName,inputTel,inputDate,inputTime,btnSubmit){
-    btnSubmit.addEventListener('click',() => {
-        let userCallBack = {
-            userName : inputName.value,
-            userPhone : inputTel.value,
-            dateForCall : inputDate.value,
-            timeForCall : inputTime.value
+const closeModal = () => {
+    closeBtn.addEventListener('click',() => {
+        callBackBlock.style.visibility = 'hidden'
+    })
+    callBackBlock.addEventListener('click',(event) => {
+        if (event.target.matches('form, input, label, span, h2, button:not(btn-close), button:not(call-back-form__btn) ')){
+            event.preventDefault()
+        }else{
+            callBackBlock.style.visibility = 'hidden'
         }
-    localStorage.setItem('userCallBack',JSON.stringify(userCallBack));
-    callBackBlock.style.visibility = 'hidden';
-});
+        
+    })
 }
 
-const createCallBackModal = () => {
-    const callBackBlock = document.createElement('div');
-    callBackBlock.classList.add('call-back-modal');
-
-    const callBackForm = document.createElement('form');
-    callBackForm.classList.add('call-back-modal__form');
-
-    const btnClose = document.createElement('button');
-    btnClose.classList.add('btn-close', 'btn');
-    btnClose.setAttribute('type','button');
-    btnClose.textContent = 'X';
-
-    const callBackTitle = document.createElement('h2');
-    callBackTitle.classList.add('call-back-modal__title', 'title');
-    callBackTitle.textContent = 'Заполните поля для обратной связи';
-
-    const inputBlockName = document.createElement('div');
-    inputBlockName.classList.add('input-block', 'input-block--name');
-    const inputName = document.createElement('input');
-    inputName.setAttribute('type','name');
-    inputName.setAttribute('placeholder','Имя');
-    inputName.setAttribute('name','name');
-    const inputNameTitle = document.createElement('label');
-    inputNameTitle.setAttribute('for','name');
-    inputNameTitle.textContent = 'Введите ваше имя';
-    inputBlockName.append(inputName,inputNameTitle)
-
-    const inputBlockTel = document.createElement('div');
-    inputBlockTel.classList.add('input-block', 'input-block--tel');
-    const inputTel = document.createElement('input');
-    inputNameTitle.setAttribute('name','tel');
-    inputTel.setAttribute('type','tel');
-    inputTel.setAttribute('name','tel');
-    inputTel.setAttribute('placeholder','Номер телефона');
-    const inputTelTitle = document.createElement('label');
-    inputTelTitle.setAttribute('for','tel');
-    inputTelTitle.textContent = 'Введите ваш номер телефона';
-    inputBlockTel.append(inputTel,inputTelTitle)
-
-    const inputBlockDate = document.createElement('div');
-    inputBlockDate.classList.add('input-block', 'input-block--date');
-    const inputDate = document.createElement('input');
-    inputDate.setAttribute('type','date');
-    inputDate.setAttribute('name','date');
-    const inputDateTitle = document.createElement('label');
-    inputDateTitle.setAttribute('for','date');
-    inputDateTitle.textContent = 'Выберите дату для обратной связи';
-    inputBlockDate.append(inputDate,inputDateTitle)
-
-    const inputBlockTime = document.createElement('div');
-    inputBlockTime.classList.add('input-block', 'input-block--time');
-    const inputTime = document.createElement('input');
-    inputTime.setAttribute('type','time');
-    inputTime.setAttribute('name','time');
-    const inputTimeTitle = document.createElement('label');
-    inputTimeTitle.setAttribute('for','time');
-    inputTimeTitle.textContent = 'Укажите удобное время для звонка';
-    inputBlockTime.append(inputTime,inputTimeTitle)
-
-    const btnSubmit = document.createElement('button');
-    btnSubmit.classList.add('call-back-form__btn', 'btn');
-    btnSubmit.setAttribute('type','submit');
-    btnSubmit.textContent = 'Отправить';
-    
-    callBackForm.append(btnClose,callBackTitle,inputBlockName,inputBlockTel,inputBlockDate,inputBlockTime,btnSubmit);
-    callBackBlock.append(callBackForm);
-    document.querySelector('main').append(callBackBlock)
-
-    callBackSubmit(inputName,inputTel,inputDate,inputTime,btnSubmit)
-}
-
-export {
-    callBackModal
+const sendData = () => {
+    btnSubmit.addEventListener('click',(event) => {
+        if(inputName.value.trim() == ''){
+            inputName.style.border = '3px solid red';
+            event.preventDefault()
+            nameError.style.visibility = 'visible';
+            nameError.style.opacity = 1;
+            setTimeout(()=>{
+                nameError.style.opacity = 0
+            },3000)
+        } else if(inputTel.value.trim() == ''){
+            inputTel.style.border = '3px solid red';
+            event.preventDefault()
+            telError.style.visibility = 'visible';
+            telError.style.opacity = 1;
+            setTimeout(()=>{
+                telError.style.opacity = 0
+            },3000)
+        }else {
+            let userCallBack = {
+                userName : inputName.value,
+                userPhone : inputTel.value,
+                dateForCall : inputDate.value,
+                timeForCall : inputTime.value
+            }
+            localStorage.setItem('userCallBack',JSON.stringify(userCallBack));
+            callBackBlock.style.visibility = 'hidden';
+            inputName.style.border = '1px solid black';
+            inputTel.style.border = '1px solid black';
+        }
+    })
 }

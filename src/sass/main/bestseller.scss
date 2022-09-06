@@ -57,10 +57,10 @@
                 .product__image-box{
                     width: 100%;
                     height: 250px;
-                    background-image: url('/src/assets/images/product-image.png');
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: auto;
+                    // background-image: url('/src/assets/images/product-image.png');
+                    // background-repeat: no-repeat;
+                    // background-position: center;
+                    // background-size: auto;
                 }
                 .product__vendor-code{
                     display: flex;
@@ -108,7 +108,6 @@
                         border-radius: 6px;
                         background-color: $colorYelow;
                         @include fontz($ubuntu,$fst,400,16px,19px,$colorBlack);
-
                     }
                 }
             }

@@ -3,7 +3,7 @@ import { renderProductList} from "./modules/productLogic";
 import { nextSlider,prevSlider } from "./modules/sliderLogic";
 import { nextSliderBottom , prevSliderBottom} from "./modules/sliderLogicBottom";
 import { clickFormBtn, createModal} from "./modules/modalAndLocalStorage";
-import { callBackModal } from "./modules/callBackModal";
+import { callBackLogic } from "./modules/callBackModal";
 const productContainer = document.querySelector('.bestseller__products');
 const btnPanel = document.querySelector('.bestseller__button-panel');
 const btnAdBtnPanel = document.querySelectorAll('.button-panel__btn');
@@ -49,4 +49,4 @@ btnPanel.addEventListener('click',(event => {
 //вопрос
 //добавить закрытие
 //2 кнопки заказать звонок(футер и хедер).заполненые данные идут в localstorage
-callBackModal()
+callBackLogic()

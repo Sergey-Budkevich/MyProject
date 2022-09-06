@@ -16,7 +16,7 @@ const clickFormBtn = () => {
     })
 }
 
-const createModal = (name) => {
+const createModal = (name, type) => {
     const modalBlock = document.createElement('div');
     modalBlock.classList.add('modal');
 

@@ -12,7 +12,10 @@
     right: 0;
     bottom: 0;
     z-index: 10;
+    visibility: hidden;
     .call-back-modal__form{
+        max-width: 480px;
+        width: 100%;
         padding: 30px;
         background-color: $colorDefaultWhite;
         width: 35%;
@@ -29,7 +32,34 @@
             display: flex;
             justify-content: space-between;
             align-items: stretch;
-            column-gap: 30px;
+            column-gap: 20px;
+            position: relative;
+            .input-error{
+                position: absolute;
+                top:38px;
+                left: 120px;
+                padding: 5px;
+                border-radius: 3px;
+                background-color: #e2e2e2;
+                z-index: 11;
+                color: $colorRed;
+                visibility: hidden;
+                transition: all ease 2s;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: -10px;
+                    left: 10px;
+                    width: 0;
+	                height: 0;
+	                border-left: 10px solid transparent;
+	                border-right: 10px solid transparent;
+	                border-bottom: 15px solid #e2e2e2;
+                }
+            }
+            .input-name-error{
+                left: 200px;
+            }
             &:nth-of-type(1),&:nth-of-type(2){
                 &>input{
                     max-width: 100%;
@@ -40,6 +70,7 @@
                 height: 30px;
                 outline: none;
                 padding-left: 15px;
+                border-radius: 5px;
             }
             &>label{
                 flex-shrink: 0;
