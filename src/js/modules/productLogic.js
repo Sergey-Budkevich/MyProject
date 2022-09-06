@@ -1,4 +1,11 @@
+import { productList } from "./products";
+
 const productContainer = document.querySelector('.bestseller__products');
+const btnPanel = document.querySelector('.bestseller__button-panel');
+const btnAdBtnPanel = document.querySelectorAll('.button-panel__btn');
+
+
+
 const createProductblock = ({vendorCode,title,size,square,capacity,warranty,price,image,type}) => {
     const productBlock = document.createElement('div');
     productBlock.classList.add('bestseller__product');
@@ -77,13 +84,29 @@ const createProductblock = ({vendorCode,title,size,square,capacity,warranty,pric
     
     productBlock.append(productImageBlock, productVendorCode, productTitle, productSizeBlock, productSquareBlock, productCapacityBlock, productWarrantyBlock, productFooterBlock);
     productContainer.append(productBlock);
+    console.log(image);
 }
 
 
-export const renderProductList = (list) => {
+const renderProductList = (list) => {
     productContainer.innerHTML = "";
     list.forEach((item) => {
         createProductblock(item);
     });
 }
 
+export const productLogic = () => {
+    btnPanel.addEventListener('click',(event => {
+        let target = event.target
+        let productListCopy = [...productList];
+        productListCopy = productListCopy.filter((item) => {
+            return item.type == target.getAttribute('btn-id');
+        });
+        for(let i = 0; i < btnAdBtnPanel.length; i++ ){
+            btnAdBtnPanel[i].classList.remove('active');
+            productContainer.innerHTML = "";
+        }
+        target.classList.add('active');
+        renderProductList(productListCopy);
+    }))
+}

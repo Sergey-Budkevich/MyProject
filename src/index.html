@@ -816,22 +816,22 @@
             <button type="button" class="btn-close btn">X</button>
             <h2 class="call-back-modal__title title">Заполните поля для обратной связи</h2>
             <div class="input-block input-block--name">
-                <input class="input-name" type="text" required placeholder="Имя" name="name">
+                <input class="input-name call-back-input" type="text" required placeholder="Имя" name="name">
                 <span class="input-error input-name-error">Заполните поле</span>
-                <label for="name">Введите ваше имя</label>
+                <label call-back-label for="name">Введите ваше имя</label>
             </div>
             <div class="input-block input-block--tel">
-                <input class="input-tel" type="tel" required placeholder="Номер телефона" name="tel">
+                <input class="input-tel call-back-input" type="tel" required placeholder="Номер телефона" name="tel">
                 <span class="input-error input-tel-error">Заполните поле</span>
-                <label for="tel">Введите ваш номер телефона</label>
+                <label call-back-label for="tel">Введите ваш номер телефона</label>
             </div>
             <div class="input-block input-block--date">
-                <input class="input-date" type="date"  name="date">
-                <label for="date">Выберите дату для обратной связи</label>
+                <input class="input-date call-back-input" type="date"  name="date">
+                <label call-back-label for="date">Выберите дату для обратной связи</label>
             </div>
             <div class="input-block input-block--time">
-                <input class="input-time" type="time" name="time">
-                <label for="time">Укажите удобное время для звонка</label>
+                <input class="input-time call-back-input" type="time" name="time">
+                <label class="call-back-label" for="time">Укажите удобное время для звонка</label>
             </div>
             <button type="submit" class="call-back-form__btn btn">Отправить</button>
         </form>

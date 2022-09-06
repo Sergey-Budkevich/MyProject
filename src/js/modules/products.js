@@ -10,7 +10,7 @@ export let productList = [
     warranty: 6,
     price: 4043900,
     sale:0,
-    image:'/src/assets/images/product-image.png',
+    image:"/src/assets/images/product-image.png",
     type:'baths'
 },
 {
@@ -23,7 +23,7 @@ export let productList = [
     warranty: 9,
     price: 2223900,
     sale:0,
-    image:'../../assets/images/product-image.png',
+    image:'/src/assets/images/product-image.png',
     type:'baths'
 },
 {
@@ -36,7 +36,7 @@ export let productList = [
     warranty: 5,
     price: 5093900,
     sale:0,
-    image:'./assets/images/product-image.png',
+    image:'src/assets/images/product-image.png',
     type:'baths'
 },
 {

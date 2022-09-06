@@ -6,17 +6,23 @@ const inputUserEmail = document.querySelector('.subscription__input-email');
 
 const clickFormBtn = () => {
     formBtn.addEventListener('click',() => {
-        let userInfo = {
+        if(inputUserName.value.trim() == ''){
+            inputUserName.style.border = '3px solid red';
+        }else if(inputUserEmail.value.trim() == ''){
+            inputUserEmail.style.border = '3px solid red';
+        } else {
+            let userInfo = {
                 userName : inputUserName.value,
                 userEmail : inputUserEmail.value
             }
-        localStorage.setItem('userInfo',JSON.stringify(userInfo))
-        let userName = JSON.parse(localStorage.getItem("userInfo")).userName;
-        createModal(userName)
+            localStorage.setItem('userInfo',JSON.stringify(userInfo))
+            let userName = JSON.parse(localStorage.getItem("userInfo")).userName;
+            createModal(userName)
+        }
     })
 }
 
-const createModal = (name, type) => {
+const createModal = (name = 'Гость') => {
     const modalBlock = document.createElement('div');
     modalBlock.classList.add('modal');
 

@@ -29,12 +29,14 @@ export function callBackLogic(){
 
 const closeModal = () => {
     closeBtn.addEventListener('click',() => {
+        clearInput()
         callBackBlock.style.visibility = 'hidden'
     })
     callBackBlock.addEventListener('click',(event) => {
-        if (event.target.matches('form, input, label, span, h2, button:not(btn-close), button:not(call-back-form__btn) ')){
+        if (event.target.matches('form, input, label, span, h2, button:not(btn-close), button:not(call-back-form__btn)')){
             event.preventDefault()
         }else{
+            clearInput()
             callBackBlock.style.visibility = 'hidden'
         }
         
@@ -67,9 +69,17 @@ const sendData = () => {
                 timeForCall : inputTime.value
             }
             localStorage.setItem('userCallBack',JSON.stringify(userCallBack));
+            clearInput()
             callBackBlock.style.visibility = 'hidden';
-            inputName.style.border = '1px solid black';
-            inputTel.style.border = '1px solid black';
         }
     })
+}
+
+const clearInput = () => {
+    inputName.style.border = '1px solid black';
+    inputTel.style.border = '1px solid black';
+    inputName.value = '';
+    inputTel.value = ''
+    inputDate.value = ''
+    inputTime.value = ''
 }
