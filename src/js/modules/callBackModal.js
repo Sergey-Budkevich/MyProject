@@ -13,7 +13,7 @@ const nameError = document.querySelector('.input-name-error');
 const telError = document.querySelector('.input-tel-error');
 
 
-export function callBackLogic(){
+function callBackLogic(){
     callBackBtn.addEventListener('click',() => {
         callBackBlock.style.visibility = 'visible'
         sendData()
@@ -82,4 +82,11 @@ const clearInput = () => {
     inputTel.value = ''
     inputDate.value = ''
     inputTime.value = ''
+}
+
+
+export {
+        sendData,
+        closeModal,
+        callBackLogic
 }

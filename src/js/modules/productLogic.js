@@ -1,12 +1,13 @@
 import { productList } from "./products";
+import { sendData,closeModal } from "./callBackModal";
 
-const productContainer = document.querySelector('.bestseller__products');
+const callBackBlock = document.querySelector('.call-back-modal');
 const btnPanel = document.querySelector('.bestseller__button-panel');
 const btnAdBtnPanel = document.querySelectorAll('.button-panel__btn');
 
 
 
-const createProductblock = ({vendorCode,title,size,square,capacity,warranty,price,image,type}) => {
+const createProductblock = ({vendorCode,title,size,square,capacity,warranty,price,image,type},container) => {
     const productBlock = document.createElement('div');
     productBlock.classList.add('bestseller__product');
     productBlock.setAttribute('product-type',type);
@@ -83,19 +84,25 @@ const createProductblock = ({vendorCode,title,size,square,capacity,warranty,pric
     productFooterBlock.append(productPrice,productBtn);
     
     productBlock.append(productImageBlock, productVendorCode, productTitle, productSizeBlock, productSquareBlock, productCapacityBlock, productWarrantyBlock, productFooterBlock);
-    productContainer.append(productBlock);
-    console.log(image);
+    container.append(productBlock);
+
+    productBtn.addEventListener('click',() => {
+        callBackBlock.style.visibility = 'visible';
+        sendData()
+        closeModal()
+    })
+
 }
 
 
-const renderProductList = (list) => {
-    productContainer.innerHTML = "";
+const renderProductList = (list,container) => {
+    container.innerHTML = "";
     list.forEach((item) => {
-        createProductblock(item);
+        createProductblock(item,container);
     });
 }
 
-export const productLogic = () => {
+const productLogic = (container) => {
     btnPanel.addEventListener('click',(event => {
         let target = event.target
         let productListCopy = [...productList];
@@ -104,9 +111,15 @@ export const productLogic = () => {
         });
         for(let i = 0; i < btnAdBtnPanel.length; i++ ){
             btnAdBtnPanel[i].classList.remove('active');
-            productContainer.innerHTML = "";
+            container.innerHTML = "";
         }
         target.classList.add('active');
-        renderProductList(productListCopy);
+        renderProductList(productListCopy,container);
     }))
+}
+
+export {
+    productLogic,
+    createProductblock,
+    renderProductList
 }

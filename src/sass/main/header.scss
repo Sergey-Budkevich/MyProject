@@ -99,6 +99,30 @@
                     height: 45px;
                     display: flex;
                     align-items: center;
+                    position: relative;
+                    .search-error{
+                        position: absolute;
+                        top:45px;
+                        left: 400px;
+                        padding: 10px;
+                        background-color: $colorWhite;
+                        border: 1px solid $colorRed;
+                        border-radius: 6px;
+                        @include fontz($ubuntu,$fst,400,14px,16px,$colorRed);
+                        opacity: 0;
+                        transition: all ease 1.5s;
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            top: -15px;
+                            left: 10px;
+                            width: 0;
+	                        height: 0;
+	                        border-left: 10px solid transparent;
+	                        border-right: 10px solid transparent;
+	                        border-bottom: 15px solid $colorRed;
+                        }
+                    }
                     .search__input{
                         height: 100%;
                         max-width: 602px;
